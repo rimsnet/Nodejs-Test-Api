@@ -1,12 +1,12 @@
-const express = require('express');
-const app = express();
+const express = require('express')
 
-const PORT = 8080;
+const app = express()
+const PORT = process.env.PORT || 3000
 
-app.get("/", (req, res) => {
-  return res.send("Received a GET HTTP method");
-});
+app.get('/', (req, res) => {
+    res.send('Hello from Node.js!')
+})
 
-app.listen(PORT, () =>
-  console.log(`Example app listening on port ${PORT}!`)
-);
+app.listen(PORT, () => {
+    console.log(`listening on port ${PORT}`)
+})
